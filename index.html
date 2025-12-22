@@ -229,6 +229,24 @@ footer{
     height:18px;
   }
 }
+/* ΜΟΝΟ το Google Review στο κέντρο */
+.btn-google{
+  justify-content: center;
+}
+
+.btn-google .left{
+  justify-content: center;
+}
+
+.btn-google .label{
+  text-align: center;
+}
+
+/* Προαιρετικό: κρύβουμε το pill μόνο στο Google */
+.btn-google .pill{
+  display: none;
+}
+
 </style>
 </head>
 
@@ -302,7 +320,7 @@ footer{
         <span class="pill">Social</span>
       </a>
 
-      <a class="btn" href="https://search.google.com/local/writereview?placeid=ChIJXXnuSnpbmhQR2RElBJNL9aw" target="_blank" rel="noopener">
+      <a class="btn btn-google" href="https://search.google.com/local/writereview?placeid=ChIJXXnuSnpbmhQR2RElBJNL9aw" target="_blank" rel="noopener">
         <span class="accent"></span>
         <div class="left">
           <img src="google_review.png" class="icon-img" alt="Google Review">
@@ -311,7 +329,6 @@ footer{
             <span>Η γνώμη σας μετράει</span>
           </div>
         </div>
-        <span class="pill">Review</span>
       </a>
 
     </div>

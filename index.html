@@ -20,8 +20,8 @@
   --glass:rgba(255,255,255,.10);
   --border:rgba(255,255,255,.22);
 
-  --shadow:0 26px 70px rgba(0,0,0,.6);
-  --radius:28px;
+  --shadow:0 22px 60px rgba(0,0,0,.55);
+  --radius:24px;
 }
 
 *{box-sizing:border-box}
@@ -32,8 +32,8 @@ body{
   font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   color:var(--text);
   background:
-    radial-gradient(800px 480px at 15% 18%, rgba(15,138,58,.25), transparent 60%),
-    radial-gradient(800px 480px at 85% 18%, rgba(216,31,42,.25), transparent 60%),
+    radial-gradient(700px 420px at 16% 18%, rgba(15,138,58,.22), transparent 60%),
+    radial-gradient(700px 420px at 84% 18%, rgba(216,31,42,.22), transparent 60%),
     linear-gradient(135deg,var(--bg1),var(--bg2));
 }
 
@@ -42,34 +42,37 @@ body{
   position:fixed;
   inset:0;
   pointer-events:none;
-  background:url("logo.png") center / min(900px,85vw) no-repeat;
-  opacity:.06;
+  background:url("logo.png") center / min(860px,92vw) no-repeat;
+  opacity:.055;
   filter:grayscale(100%);
 }
 
+/* Wrapper */
 .wrap{
   min-height:100%;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:28px 16px;
+  padding:18px 12px;
   position:relative;
   z-index:1;
 }
 
+/* Card */
 .card{
-  width:min(640px,100%);
+  width:min(520px,100%);
   background:linear-gradient(180deg,var(--glass),rgba(255,255,255,.05));
   border:1px solid var(--border);
   border-radius:var(--radius);
   box-shadow:var(--shadow);
   backdrop-filter:blur(14px);
   overflow:hidden;
+  position:relative; /* για counter */
 }
 
 /* Italian ribbon */
 .ribbon{
-  height:10px;
+  height:9px;
   background:linear-gradient(
     90deg,
     var(--green) 0 33.33%,
@@ -79,19 +82,20 @@ body{
 }
 
 .inner{
-  padding:26px 20px 24px;
+  padding:18px 14px 16px;
 }
 
+/* Header */
 .header{
   display:flex;
-  gap:16px;
+  gap:12px;
   align-items:center;
 }
 
 .logo{
-  width:64px;
-  height:64px;
-  border-radius:18px;
+  width:54px;
+  height:54px;
+  border-radius:16px;
   background:rgba(0,0,0,.30);
   border:1px solid rgba(255,255,255,.25);
   display:grid;
@@ -106,104 +110,123 @@ body{
 
 h1{
   margin:0;
-  font-size:clamp(26px,4.5vw,40px);
+  font-size:clamp(22px,6vw,30px);
   line-height:1.05;
 }
 
 .subtitle{
-  margin-top:8px;
+  margin-top:6px;
   color:var(--muted);
-  font-size:15px;
+  font-size:13.5px;
 }
 
 .divider{
   height:1px;
-  margin:20px 0 22px;
+  margin:14px 0;
   background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
 }
 
-/* Vertical buttons */
+/* Buttons */
 .buttons{
   display:flex;
   flex-direction:column;
-  gap:16px;
+  gap:10px;
 }
 
-/* Button */
 .btn{
   position:relative;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:16px;
-  padding:18px 20px;
-  min-height:88px;
-  border-radius:22px;
+  gap:12px;
+  padding:12px;
+  min-height:64px;
+  border-radius:18px;
   text-decoration:none;
   color:var(--text);
-  background:rgba(0,0,0,.35);
-  border:1px solid rgba(255,255,255,.25);
-  transition:.15s ease;
+  background:rgba(0,0,0,.34);
+  border:1px solid rgba(255,255,255,.22);
+  transition:.12s ease;
   overflow:hidden;
 }
 
 .btn:hover{
   transform:translateY(-1px);
-  background:rgba(0,0,0,.45);
+  background:rgba(0,0,0,.42);
 }
 
-/* Italian accent */
 .accent{
   position:absolute;
   left:0;top:0;bottom:0;
-  width:10px;
+  width:8px;
   background:linear-gradient(180deg,var(--green),var(--white),var(--red));
 }
 
 .left{
   display:flex;
   align-items:center;
-  gap:16px;
+  gap:12px;
   z-index:1;
+  min-width:0;
 }
 
 .icon-img{
-  width:44px;
-  height:44px;
+  width:32px;
+  height:32px;
   object-fit:contain;
 }
 
 .label strong{
   display:block;
-  font-size:18px;
+  font-size:15px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 .label span{
-  font-size:14px;
+  font-size:12.5px;
   color:var(--muted);
 }
 
 .pill{
   z-index:1;
-  padding:10px 16px;
+  padding:7px 10px;
   border-radius:999px;
-  border:1px solid rgba(255,255,255,.30);
-  background:rgba(255,255,255,.12);
-  font-size:14px;
+  border:1px solid rgba(255,255,255,.26);
+  background:rgba(255,255,255,.10);
+  font-size:12.5px;
   white-space:nowrap;
 }
 
-/* Google image */
-.google-img{
-  width:44px;
-  height:44px;
-  object-fit:contain;
+/* Counter */
+.views{
+  position:absolute;
+  bottom:12px;
+  right:12px;
+}
+.views img{
+  height:16px;
+  opacity:.75;
+  display:block;
 }
 
+/* Footer */
 footer{
-  margin-top:22px;
+  margin-top:14px;
   text-align:center;
   font-size:12px;
   color:rgba(247,247,251,.6);
+}
+
+/* Mobile tweak */
+@media (max-width: 480px){
+  .views{
+    bottom:8px;
+    right:8px;
+  }
+  .views img{
+    height:18px;
+  }
 }
 </style>
 </head>
@@ -230,8 +253,7 @@ footer{
 
     <div class="buttons">
 
-      <!-- 1. efood -->
-      <a class="btn" href="https://www.e-food.gr/delivery/irakleio-kriti/italian-pizza-kai-pasta-7564641" target="_blank">
+      <a class="btn" href="https://www.e-food.gr/delivery/irakleio-kriti/italian-pizza-kai-pasta-7564641" target="_blank" rel="noopener">
         <span class="accent"></span>
         <div class="left">
           <img src="efood.png" class="icon-img" alt="efood">
@@ -243,8 +265,7 @@ footer{
         <span class="pill">Άνοιγμα</span>
       </a>
 
-      <!-- 2. Wolt -->
-      <a class="btn" href="https://wolt.com/el/grc/heraklion/restaurant/italian-pizza-pasta-heraklion" target="_blank">
+      <a class="btn" href="https://wolt.com/el/grc/heraklion/restaurant/italian-pizza-pasta-heraklion" target="_blank" rel="noopener">
         <span class="accent"></span>
         <div class="left">
           <img src="wolt.png" class="icon-img" alt="Wolt">
@@ -256,8 +277,7 @@ footer{
         <span class="pill">Άνοιγμα</span>
       </a>
 
-      <!-- 3. Facebook -->
-      <a class="btn" href="https://www.facebook.com/profile.php?id=61552597052137" target="_blank">
+      <a class="btn" href="https://www.facebook.com/profile.php?id=61552597052137" target="_blank" rel="noopener">
         <span class="accent"></span>
         <div class="left">
           <img src="facebook.png" class="icon-img" alt="Facebook">
@@ -269,8 +289,7 @@ footer{
         <span class="pill">Social</span>
       </a>
 
-      <!-- 4. Instagram -->
-      <a class="btn" href="https://www.instagram.com/italian_pizza_pasta_heraklion/?hl=el" target="_blank">
+      <a class="btn" href="https://www.instagram.com/italian_pizza_pasta_heraklion/?hl=el" target="_blank" rel="noopener">
         <span class="accent"></span>
         <div class="left">
           <img src="instagram.png" class="icon-img" alt="Instagram">
@@ -282,11 +301,10 @@ footer{
         <span class="pill">Social</span>
       </a>
 
-      <!-- 5. Google Review -->
-      <a class="btn" href="https://search.google.com/local/writereview?placeid=ChIJXXnuSnpbmhQR2RElBJNL9aw" target="_blank">
+      <a class="btn" href="https://search.google.com/local/writereview?placeid=ChIJXXnuSnpbmhQR2RElBJNL9aw" target="_blank" rel="noopener">
         <span class="accent"></span>
         <div class="left">
-          <img src="google_review.png" class="google-img" alt="Αξιολογήστε μας στο Google">
+          <img src="google_review.png" class="icon-img" alt="Google Review">
           <div class="label">
             <strong>Αξιολογήστε μας στο Google</strong>
             <span>Η γνώμη σας μετράει</span>
@@ -300,12 +318,26 @@ footer{
     <footer>
       © <span id="y"></span> Italian Pizza &amp; Pasta
     </footer>
+
+    <!-- Counter -->
+    <div class="views">
+      <img id="hitCounter" alt="">
+    </div>
+
   </div>
 </section>
 </main>
 
 <script>
 document.getElementById("y").textContent = new Date().getFullYear();
+
+/* Dynamic hit counter */
+(function () {
+  var url = encodeURIComponent(window.location.href);
+  document.getElementById("hitCounter").src =
+    "https://hitscounter.dev/api/hit?url=" + url +
+    "&label=&icon=github&color=%23198754&message=&style=flat&tz=UTC";
+})();
 </script>
 </body>
 </html>

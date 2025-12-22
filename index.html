@@ -82,7 +82,7 @@ body{
 }
 
 .inner{
-  padding:18px 14px 16px;
+  padding:18px 14px 44px; /* extra space για να μην πέφτει ο counter πάνω σε κουμπί */
 }
 
 /* Header */
@@ -188,6 +188,7 @@ h1{
   color:var(--muted);
 }
 
+/* Pill */
 .pill{
   z-index:1;
   padding:7px 10px;
@@ -201,8 +202,9 @@ h1{
 /* Counter */
 .views{
   position:absolute;
-  bottom:12px;
-  right:12px;
+  bottom:8px;
+  right:10px;
+  pointer-events:none; /* να μην μπλοκάρει tap στο κουμπί */
 }
 .views img{
   height:16px;
@@ -221,8 +223,8 @@ footer{
 /* Mobile tweak */
 @media (max-width: 480px){
   .views{
-    bottom:8px;
-    right:8px;
+    bottom:4px;
+    right:6px;
   }
   .views img{
     height:18px;

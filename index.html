@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Italian Pizza & Pasta</title>
+
+<style>
+:root{
+  --green:#0f8a3a;
+  --white:#ffffff;
+  --red:#d81f2a;
+
+  --bg1:#0b0c12;
+  --bg2:#121420;
+
+  --text:#f7f7fb;
+  --muted:rgba(247,247,251,.7);
+
+  --glass:rgba(255,255,255,.10);
+  --border:rgba(255,255,255,.22);
+
+  --shadow:0 26px 70px rgba(0,0,0,.6);
+  --radius:28px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(800px 480px at 15% 18%, rgba(15,138,58,.25), transparent 60%),
+    radial-gradient(800px 480px at 85% 18%, rgba(216,31,42,.25), transparent 60%),
+    linear-gradient(135deg,var(--bg1),var(--bg2));
+}
+
+/* Watermark logo */
+.watermark{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:url("logo.png") center / min(900px,85vw) no-repeat;
+  opacity:.06;
+  filter:grayscale(100%);
+}
+
+.wrap{
+  min-height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:28px 16px;
+  position:relative;
+  z-index:1;
+}
+
+.card{
+  width:min(640px,100%);
+  background:linear-gradient(180deg,var(--glass),rgba(255,255,255,.05));
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(14px);
+  overflow:hidden;
+}
+
+/* Italian ribbon */
+.ribbon{
+  height:10px;
+  background:linear-gradient(
+    90deg,
+    var(--green) 0 33.33%,
+    var(--white) 33.33% 66.66%,
+    var(--red) 66.66% 100%
+  );
+}
+
+.inner{
+  padding:26px 20px 24px;
+}
+
+.header{
+  display:flex;
+  gap:16px;
+  align-items:center;
+}
+
+.logo{
+  width:64px;
+  height:64px;
+  border-radius:18px;
+  background:rgba(0,0,0,.30);
+  border:1px solid rgba(255,255,255,.25);
+  display:grid;
+  place-items:center;
+}
+.logo img{
+  width:85%;
+  height:85%;
+  object-fit:contain;
+  filter:grayscale(100%);
+}
+
+h1{
+  margin:0;
+  font-size:clamp(26px,4.5vw,40px);
+  line-height:1.05;
+}
+
+.subtitle{
+  margin-top:8px;
+  color:var(--muted);
+  font-size:15px;
+}
+
+.divider{
+  height:1px;
+  margin:20px 0 22px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+}
+
+/* Vertical buttons */
+.buttons{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+/* Button */
+.btn{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:18px 20px;
+  min-height:88px;
+  border-radius:22px;
+  text-decoration:none;
+  color:var(--text);
+  background:rgba(0,0,0,.35);
+  border:1px solid rgba(255,255,255,.25);
+  transition:.15s ease;
+  overflow:hidden;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+  background:rgba(0,0,0,.45);
+}
+
+/* Italian accent */
+.accent{
+  position:absolute;
+  left:0;top:0;bottom:0;
+  width:10px;
+  background:linear-gradient(180deg,var(--green),var(--white),var(--red));
+}
+
+.left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  z-index:1;
+}
+
+.icon-img{
+  width:44px;
+  height:44px;
+  object-fit:contain;
+}
+
+.label strong{
+  display:block;
+  font-size:18px;
+}
+.label span{
+  font-size:14px;
+  color:var(--muted);
+}
+
+.pill{
+  z-index:1;
+  padding:10px 16px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.30);
+  background:rgba(255,255,255,.12);
+  font-size:14px;
+  white-space:nowrap;
+}
+
+/* Google image */
+.google-img{
+  width:44px;
+  height:44px;
+  object-fit:contain;
+}
+
+footer{
+  margin-top:22px;
+  text-align:center;
+  font-size:12px;
+  color:rgba(247,247,251,.6);
+}
+</style>
+</head>
+
+<body>
+<div class="watermark"></div>
+
+<main class="wrap">
+<section class="card">
+  <div class="ribbon"></div>
+
+  <div class="inner">
+    <div class="header">
+      <div class="logo">
+        <img src="logo.png" alt="Italian Pizza & Pasta">
+      </div>
+      <div>
+        <h1>Italian Pizza &amp; Pasta</h1>
+        <p class="subtitle">Παραγγελία &amp; Social links</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="buttons">
+
+      <!-- 1. efood -->
+      <a class="btn" href="https://www.e-food.gr/delivery/irakleio-kriti/italian-pizza-kai-pasta-7564641" target="_blank">
+        <span class="accent"></span>
+        <div class="left">
+          <img src="efood.png" class="icon-img" alt="efood">
+          <div class="label">
+            <strong>efood</strong>
+            <span>Παραγγελία</span>
+          </div>
+        </div>
+        <span class="pill">Άνοιγμα</span>
+      </a>
+
+      <!-- 2. Wolt -->
+      <a class="btn" href="https://wolt.com/el/grc/heraklion/restaurant/italian-pizza-pasta-heraklion" target="_blank">
+        <span class="accent"></span>
+        <div class="left">
+          <img src="wolt.png" class="icon-img" alt="Wolt">
+          <div class="label">
+            <strong>Wolt</strong>
+            <span>Παραγγελία</span>
+          </div>
+        </div>
+        <span class="pill">Άνοιγμα</span>
+      </a>
+
+      <!-- 3. Facebook -->
+      <a class="btn" href="https://www.facebook.com/profile.php?id=61552597052137" target="_blank">
+        <span class="accent"></span>
+        <div class="left">
+          <img src="facebook.png" class="icon-img" alt="Facebook">
+          <div class="label">
+            <strong>Facebook</strong>
+            <span>Επίσημη σελίδα</span>
+          </div>
+        </div>
+        <span class="pill">Social</span>
+      </a>
+
+      <!-- 4. Instagram -->
+      <a class="btn" href="https://www.instagram.com/italian_pizza_pasta_heraklion/?hl=el" target="_blank">
+        <span class="accent"></span>
+        <div class="left">
+          <img src="instagram.png" class="icon-img" alt="Instagram">
+          <div class="label">
+            <strong>Instagram</strong>
+            <span>@italian_pizza_pasta_heraklion</span>
+          </div>
+        </div>
+        <span class="pill">Social</span>
+      </a>
+
+      <!-- 5. Google Review -->
+      <a class="btn" href="https://search.google.com/local/writereview?placeid=ChIJXXnuSnpbmhQR2RElBJNL9aw" target="_blank">
+        <span class="accent"></span>
+        <div class="left">
+          <img src="google_review.png" class="google-img" alt="Αξιολογήστε μας στο Google">
+          <div class="label">
+            <strong>Αξιολογήστε μας στο Google</strong>
+            <span>Η γνώμη σας μετράει</span>
+          </div>
+        </div>
+        <span class="pill">Review</span>
+      </a>
+
+    </div>
+
+    <footer>
+      © <span id="y"></span> Italian Pizza &amp; Pasta
+    </footer>
+  </div>
+</section>
+</main>
+
+<script>
+document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
